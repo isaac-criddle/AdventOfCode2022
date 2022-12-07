@@ -1,6 +1,6 @@
 import re
 
-input_file = 'input4.txt'
+input_file = 'inputs/input4.txt'
 
 input = []
 
