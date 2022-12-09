@@ -1,5 +1,5 @@
 input = []
-with open('tests/test8.txt') as f:
+with open('inputs/input8.txt') as f:
     for line in f:
         input.append(line.strip())
 
@@ -106,10 +106,14 @@ def left(row_idx, col_idx):
     return left
 
 max = 0
-for row_idx in range(row_num):
-    for col_idx in range(col_num):
-        s = below(row_idx, col_idx)
+for row_idx in range(1, row_num):
+    for col_idx in range(1, col_num):
+        s = 1
+        s *= below(row_idx, col_idx)
+        s *= above(row_idx, col_idx)
+        s *= right(row_idx, col_idx)
+        s *= left(row_idx, col_idx)
         if s > max:
             max = s
 
-print(below(1,2), right(1,2), above(1,2))
+print(max)
